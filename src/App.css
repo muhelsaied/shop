@@ -3,10 +3,38 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico');
 :root{
   --primaryColor:#3f18dc;
+  --blueColor:#5fb7ea;
+  --primaryRGBA:rgba(0,0,0,0.3);
+  --mainGrey:#d8d8d8;
+  --mainWhite:#fff;
+  --mainBlack:#222;
+
+
+  --easeTransition:all 0.3s ease-in-out;
+
+
+  --specialFont:'Pacifico';
+  --fontBold:800;
+  --fontMedium:600;
+  --fontlight:300;
+
+  --mainSpace: 0.25rem;
+
 }
 
 
 body{
+  background: var(--mainGrey) !important;
+  color: var(--mainBlack) !important;
   text-align: center;
   font-family: 'Lobster',sans-serif,Georgia, 'Times New Roman', Times, serif !important;
+}
+.text-title{
+font-family: var(--specialFont) !important;
+font-weight:var(--fontBold);
+letter-spacing: var(--mainSpace);
+text-transform:capitalize; 
+}
+.text-main{
+  color:var(--primaryColor);
 }
