@@ -12,7 +12,11 @@ import Contact from './pages/ContactPage';
 import Cart from './pages/CartPage';
 import Default from './pages/DefaultPage';
 
-
+// default structure 
+import NavBar from './components/navbar';
+import SideBar from './components/sidebar';
+import POPCart from './components/popcart';
+import Footer from './components/footer'
 //working with external npm
 import { Route, Link, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,6 +29,13 @@ class App extends Component {
     return (
       <div>
           {/*      navbar         */}
+          <NavBar/>
+
+          {/*      sidebar         */}
+          <SideBar/>
+          {/*      popcart         */}
+          <POPCart/>
+
         <Switch>
 
           <Route path='/' exact component = {Home}/>
@@ -36,6 +47,9 @@ class App extends Component {
           <Route exact component = {Default}/>
 
         </Switch>
+          {/*      footer         */}
+          <Footer/>
+
         </div>
     );
   }
