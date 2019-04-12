@@ -4,7 +4,7 @@
 :root{
   --primaryColor:#3f18dc;
   --blueColor:#5fb7ea;
-  --primaryRGBA:rgba(0,0,0,0.3);
+  --primaryRGBA:rgba(0,0,0,0.1);
   --mainGrey:#d8d8d8;
   --mainWhite:#fff;
   --mainBlack:#222;
@@ -24,7 +24,7 @@
 
 
 body{
-  background: var(--mainGrey) !important;
+  background: var(--mainWhite) !important;
   color: var(--mainBlack) !important;
   text-align: center;
   font-family: 'Lobster',sans-serif,Georgia, 'Times New Roman', Times, serif !important;
