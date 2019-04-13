@@ -17,7 +17,7 @@ class Services extends Component {
                                     <div className='col-10 service-icon'>{item.icon}</div>
                                     <div className='col-10 mt-3'>
                                         <h3 className="text-capitalize">{item.title}</h3>
-                                        <p className='text-lead text-muted mx-auto my-4'>{item.text}</p>
+                                        <p className='text-lead  mx-auto my-4'>{item.text}</p>
                                     </div> 
                                 </div>   
                             </div> 
@@ -36,12 +36,12 @@ const ServicesWrapper = styled.section`
     text-align:center;
     align-content:center;
     justify-content:space-around;
-    background:rgba(10, 8, 123, 0.76);
+    background:rgb(63, 40, 220,0.95);
     color:var(--mainWhite);
+    font-size:1.5rem;
     
     .service-icon{
-        font-size:2.5rem;
-        color:var(--mainGrey);
+        font-size:3.5rem;
         padding:1rem;
     }
     .fix{
@@ -53,6 +53,6 @@ const ServicesWrapper = styled.section`
     .fix:hover{
         /* filter:brightness(20%); */
         background:var(--mainWhite);
-        color:var(--primaryColor)
+        color:rgb(63, 40, 220,0.95);
     }
-`
+    `

@@ -58,10 +58,10 @@ const SideWrapper = styled.nav`
       text-decoration:none;
     }
       .side-link:hover{
-        color:var(--mainWhite);
+        color:var(--primaryColor);
         padding-left:2.5rem;
-        background:var(--primaryColor);
-        filter:brightness(30%);
+        background:var(--mainWhite);
+        filter:brightness(65%);
       }
 
 @media (min-width: 680px){

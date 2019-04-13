@@ -20,14 +20,14 @@ import SideBar from './components/sidebar';
 import POPCart from './components/popcart';
 import Footer from './components/footer'
 //working with external npm
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import styled from 'styled-components';
 
 
 
 class App extends Component {
   render() {
+    // alert('UNDER DEVELOPMENT');
     return (
       <div>
           {/*      navbar         */}

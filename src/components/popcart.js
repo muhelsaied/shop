@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ProductConsumer } from '../context';
 import styled from 'styled-components';
 
@@ -10,7 +10,7 @@ export default function PopCart(){
                         const { closeCart, cartOpen, cart } = value;
                         return(
                             <CartWrapper show = {cartOpen} onClick={closeCart}>
-                                    <p>cart items</p>
+                                    <p>cart items {cart }</p>
                             </CartWrapper>
                         )
                     }
@@ -19,7 +19,7 @@ export default function PopCart(){
         );
       }
 const CartWrapper = styled.div`
-    position: absolute;
+    position: fixed;
     right: 10px;
     top: 75px;
     z-index:100;
