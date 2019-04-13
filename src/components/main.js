@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import mainBcg from '../images/defaultBcg.jpeg'
+import mainBcg from '../images/mainBcg.jpeg'
 export default function Main( {img, title, max, children}){
         return (
             <MainWrapper max={max} img={img}>

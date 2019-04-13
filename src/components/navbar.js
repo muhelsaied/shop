@@ -32,6 +32,7 @@ const NavBarWapper = styled.nav`
   font-size:25px;
   position:-webkit-sticky;
   position: sticky;
+  z-index:10000;
   top: 0;
   width: 100%;
   padding:1rem 1.25rem;
