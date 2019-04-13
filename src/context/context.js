@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { linkData } from './linkData'
+import  { SoicalData } from '../context/soicalLink'
+
 const ProductContext = React.createContext();
 
 
@@ -8,6 +10,7 @@ class ProductProvider extends Component{
         sidbarOpen:false,
         cartOpen:false,
         cartItems:0,
+        soicalLinks:SoicalData,
         links:linkData
     }
 // side bar toggle 

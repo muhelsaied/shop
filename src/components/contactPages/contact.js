@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 export default function Contact() {
   return (
-    <FormWrapper className = 'py-4'>
-        <div className = 'row'>
+    <FormWrapper className = 'py-3'>
+        <div className = 'row  m-0'>
             <div className = 'col-10 mx-auto col-md-6 my-4'>
                 <Title 
                     title='Your suggestion  &amp;Comments'
