@@ -2,6 +2,7 @@ import React from 'react';
 import { FaCartPlus, FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import { ProductConsumer } from '../context';
+import { Link } from 'react-router-dom';
 import Logo from '../images/logo.svg'
 
 export default function NavBar() {
@@ -14,7 +15,9 @@ export default function NavBar() {
               <NavBarWapper>
                 <div className='nav-center'>
                   <FaBars className="nav-icons" onClick={handleSide}/>
-                  <img src={Logo} alt='logo_item'/>
+                  <Link to='/'>
+                    <img src={Logo} alt='logo_item'/>
+                    </Link>
                   <div className='nav-cart'>
                     <FaCartPlus className='nav-icons' onClick={handleCart}/>
                     <div className='cart-items'>{cartItems}</div>

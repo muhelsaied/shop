@@ -12,6 +12,7 @@ export default function SideBar() {
           <SideWrapper show={sidbarOpen}>
             <ul>
                 {links.map(link =>{
+                  // console.log(link.id)
                   return(
                   <li key = {link.id} >
                   <Link 

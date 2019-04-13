@@ -32,8 +32,8 @@ export const linkData =
     },
     {
         id:7,
-        text:'about',
-        path:'/about'
+        text:'track order',
+        path:'/track order'
     },
     {
         id:8,
