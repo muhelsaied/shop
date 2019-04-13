@@ -2,6 +2,10 @@ import React from 'react'
 import Main from '../components/main'
 import { Link } from 'react-router-dom'
 
+import FeatureProduct from '../components/homePage/featuresProduct'
+import Services from '../components/homePage/services'
+
+
 
 
 export default function Home() {
@@ -15,6 +19,9 @@ export default function Home() {
           Find your Product
           </Link>
       </Main>
+      <Services/>
+      <FeatureProduct/>
+
     </div>
   )
 }
