@@ -1,17 +1,16 @@
 import React from 'react';
-import { FaHome, FaCartPlus, FaBars } from 'react-icons/fa';
+import { FaCartPlus, FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import { ProductConsumer } from '../context';
 import Logo from '../images/logo.svg'
 
 export default function NavBar() {
   return (
-    <div>
       <ProductConsumer>
         {
           value =>{
           const { cartItems, handleSide, handleCart } = value;
-           return <nav>
+           return (
               <NavBarWapper>
                 <div className='nav-center'>
                   <FaBars className="nav-icons" onClick={handleSide}/>
@@ -22,20 +21,19 @@ export default function NavBar() {
                   </div>
                 </div>
               </NavBarWapper>
-            </nav>
+            )
             }
         }
       </ProductConsumer>
-    </div>
   )
 }
 
 const NavBarWapper = styled.nav`
   font-size:25px;
   position:-webkit-sticky;
-  position:sticky;
-  top:0;
-  width:100%;
+  position: sticky;
+  top: 0;
+  width: 100%;
   padding:1rem 1.25rem;
   background:var(--primaryColor);
   box-shadow:5px 5px 20px 10px var(--primaryRGBA);
@@ -50,18 +48,19 @@ const NavBarWapper = styled.nav`
 
     }
       .nav-icons{
+        font-size: 1.5rem;
         cursor: pointer;
       }
       .nav-cart{
         position:relative;
       }
         .cart-items{
-          font-size:.95rem;
-          color:var(--mainWhite);
-          background:var(--primaryColor);
+          font-size:.75rem;
+          color:var(--primaryColor);
+          background:var(--mainWhite);
           position:absolute;
-          top:-8px;
-          right:-9px;
+          top:-4px;
+          right:-6px;
           padding:0 5px;
           border-radius: 50%;
         }

@@ -10,6 +10,8 @@ import Products from './pages/ProductsPage';
 import SingleProduct from './pages/SingleProuductPage';
 import Contact from './pages/ContactPage';
 import Cart from './pages/CartPage';
+import Deals from './pages/Deals';
+import MyAccount from './pages/MyAccount';
 import Default from './pages/DefaultPage';
 
 // default structure 
@@ -44,6 +46,8 @@ class App extends Component {
           <Route path='/product/:id/'  component = {SingleProduct}/>
           <Route path='/cart/'  component = {Cart}/>
           <Route path='/contact/'  component = {Contact}/>
+          <Route path='/deals/'  component = {Deals}/>
+          <Route path='/MyAccount/'  component = {MyAccount}/>
           <Route exact component = {Default}/>
 
         </Switch>

@@ -7,13 +7,13 @@ export const linkData =
     },
     {
         id:2,
-        text:'about',
-        path:'/about'
+        text:'deals',
+        path:'/deals'
     },
     {
         id:3,
         text:'products',
-        path:'/product'
+        path:'/products'
     },
     {
         id:4,
@@ -22,7 +22,23 @@ export const linkData =
     },
     {
         id:5,
+        text:'about',
+        path:'/about'
+    },
+    {
+        id:6,
         text:'cart',
         path:'/cart'
+    },
+    {
+        id:7,
+        text:'about',
+        path:'/about'
+    },
+    {
+        id:8,
+        text:'my account',
+        path:'/myaccount'
     }
 ]
+

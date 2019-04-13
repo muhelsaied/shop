@@ -26,7 +26,7 @@
 body{
   background: var(--mainWhite) !important;
   color: var(--mainBlack) !important;
-  text-align: center;
+  /* text-align: center; */
   font-family: 'Lobster',sans-serif,Georgia, 'Times New Roman', Times, serif !important;
 }
 .text-title{
@@ -40,4 +40,25 @@ text-transform:capitalize;
 }
 .background-Primary{
   background: 
+}
+
+/* // button link */
+.main-link{
+  padding: .5rem 1.5rem;
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpace);
+  outline: 2px solid var(--primaryColor);
+  outline-offset:4px; 
+  border: none;
+  transition: var(--easeTransition);
+  /* margin: .5rem; */
+}
+.main-link:hover{
+background: var(--mainWhite);
+color: var(--primaryColor);
+outline-color:var(--mainWhite);
+text-decoration: none;
 }
