@@ -10,7 +10,7 @@ export default function PopCart(){
                         const { closeCart, cartOpen, cart } = value;
                         return(
                             <CartWrapper show = {cartOpen} onClick={closeCart}>
-                                    <p>cart items {cart }</p>
+                                    <p>cart items </p>
                             </CartWrapper>
                         )
                     }

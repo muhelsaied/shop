@@ -18,8 +18,8 @@ class ProductProvider extends Component{
         cartTax:0,
         cartTotal:0,
         storeProducts:[],
-        FilteredProduct:[],
-        featuredProductd:[],
+        FilteredProducts:[],
+        featuredProducts:[],
         singleProduct:{},
         loading:true 
     }
@@ -43,17 +43,33 @@ setProducts = (products) =>{
     //featured products
     let featuredProducts = products.filter(item => item.featured === true);
     this.setState({
-        
+        storeProducts,
+        FilteredProducts:storeProducts,
+        featuredProducts,
+        cart:this.getStorageCart(),
+        singleProduct:this.getStorageProduct(),
+        loading:false
+
     });
 } 
+// get cart from  local storage
+getStorageCart=() => {
+    return {};
+}
 
+
+// get product from local storage
+getStorageProduct = ()=> {
+    return {};
+}
 
 // side bar toggle 
 handleSide = () =>{
     this.setState({
         sidbarOpen:!this.state.sidbarOpen
-    })
-}
+    });
+    }
+
 //toggle cart
 handleCart = () =>{
     this.setState({
