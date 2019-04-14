@@ -11,7 +11,7 @@ export default function FeatureProduct() {
                 <div className='container' >
                 {/* title */}
                     <Title title='featured Product' center='true' />
-                    <div className='row'>
+                    <div className='row my-5'>
                     {/* product */}
                         <ProductConsumer>
                         {

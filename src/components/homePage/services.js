@@ -11,7 +11,7 @@ class Services extends Component {
                 {
                     this.state.services.map( item => {
                         return(
-                            <div className ='col-sm-10  mx-auto col-md-4 py-3'
+                            <div className ='col-sm-10  mx-auto col-md-5 col-lg-4 py-3'
                                 key = {item.id}>
                                 <div className='row m-0 fix'>
                                     <div className='col-10 service-icon'>{item.icon}</div>

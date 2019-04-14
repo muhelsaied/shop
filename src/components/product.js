@@ -15,7 +15,7 @@ export default function Product({product}){
                             console.log(product)
                             return (
                             <ProductWrapper className='col-10 mx-auto col-sm-8 col-md-6 col-lg-4 my-4'>
-                                <div className='card rounded'>
+                                <div className='card '>
                                     <div className='img-container'>
                                         <img src={product.image} 
                                             alt={product.title}
@@ -52,6 +52,7 @@ const ProductWrapper = styled.div`
         box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
         transition: var(--easeTransition);
         height: 100%;
+        border-radius:15px;
     }
     .card:hover{
         box-shadow: 10px 8px 10px 5px rgba(0,0,0,0.5);
@@ -89,5 +90,23 @@ const ProductWrapper = styled.div`
     font-weight: 400;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+  }
+  .text-main{
+      border-radius:10px;
+      padding:.25rem;
+  }
+  .card:hover .text-main{
+      background-color:var(--primaryColor)!important;
+      color:var(--mainWhite);
+  }
+  @media (max-width:400px) {
+      .icon{
+        font-size: 2rem;
+        margin: .4rem;
+      }
+      .card-body{
+          flex-direction:column;
+          text-align:center;
+      }
   }
 `
