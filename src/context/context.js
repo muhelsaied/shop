@@ -21,7 +21,7 @@ class ProductProvider extends Component{
         FilteredProducts:[],
         featuredProducts:[],
         singleProduct:{},
-        loading:true 
+        loading:false 
     }
 //
 componentDidMount(){
@@ -35,13 +35,14 @@ setProducts = (products) =>{
 
     let storeProducts = products.map(item => {
         const { id } = item.sys;
-        const product = { id ,...item.fields};
+        const image = item.fields.image.fields.file.url;
+        const product = { id ,...item.fields, image };
         return product ;
     })
-    console.log(storeProducts);
+    // console.log(storeProducts);
 
     //featured products
-    let featuredProducts = products.filter(item => item.featured === true);
+    let featuredProducts = storeProducts.filter(item => item.featured === true);
     this.setState({
         storeProducts,
         FilteredProducts:storeProducts,
@@ -51,6 +52,7 @@ setProducts = (products) =>{
         loading:false
 
     });
+    // console.log(featuredProducts);
 } 
 // get cart from  local storage
 getStorageCart=() => {
@@ -62,6 +64,26 @@ getStorageCart=() => {
 getStorageProduct = ()=> {
     return {};
 }
+
+
+// cart items
+
+//add to cart
+addToCart = id => {
+    console.log(`add to cart ${id}`)
+}
+//set singlePage product 
+setSingleProduct  = id => {
+    console.log(`singlePage product  ${id}`)
+}
+// get total 
+getTotal = ()=> {}
+//add total
+addTotal = () => {}
+//sync storage
+syncStorage = () => {}
+
+
 
 // side bar toggle 
 handleSide = () =>{
@@ -96,7 +118,9 @@ openCart = () =>{
             handleSide:this.handleSide,
             handleCart:this.handleCart,
             openCart:this.openCart,
-            closeCart:this.closeCart
+            closeCart:this.closeCart,
+            addToCart:this.addToCart,
+            setSingleProduct:this.setSingleProduct
         }}>
         {this.props.children}
         </ProductContext.Provider>
