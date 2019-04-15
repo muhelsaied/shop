@@ -84,7 +84,33 @@ getStorageProduct = ()=> {
 
 //add to cart
 addToCart = id => {
-    console.log(`add to cart ${id}`)
+    //set temp cart/productlist/item to deal with
+    console.log(this.state.cart)
+    let tempCart = [ ...this.state.cart];
+    let tempProducts = [...this.state.storeProducts];
+    let tempItem = tempCart.find(product => product.id === id);
+    if(!tempItem)
+    {
+        tempItem = tempProducts.find(product => product.id === id);
+        let total = tempItem.price;
+        let cartItem ={...tempItem, counter:1, total };
+        tempCart= [...tempItem, cartItem];
+        
+    }
+    else{
+        tempItem.counter++;
+        tempItem.total = tempItem.price * tempItem.counter;
+        tempItem.total = parseFloat(tempItem.total.toFixed(3)); 
+    }
+    this.setState({
+        cart:tempCart
+    },
+        ()=>{
+        this.addTotal();
+        this.syncStorage();
+        this.openCart();
+    });
+    console.log(tempCart)
 }
 //set singlePage product 
 setSingleProduct  = id => {
