@@ -79,12 +79,16 @@ const ProductWrapper = styled.div`
     .card:hover .float-icons{
         opacity:1;
     }
+    .card-body{
+          text-align:center;
+      }
     .icon{
         font-size: 2.5rem;
         margin: 1rem;
         padding:0.25rem;
         color:var(--primaryColor);
-        background:var(--maingrey)
+        background:var(--maingrey);
+        /* box-shadow: 5px 2px 5px 5px rgba(0,0,0,0.5); */
     }
     .card-body {
     font-weight: 400;
@@ -92,19 +96,25 @@ const ProductWrapper = styled.div`
     text-transform: uppercase;
   }
   .text-main{
-      border-radius:10px;
-      padding:.25rem;
+    position: absolute;
+    top:10%;
+    right:5%;
+    border-radius:100%;
+    padding:1.5rem;
+    opacity:.7;
   }
   .card:hover .text-main{
       background-color:var(--primaryColor)!important;
       color:var(--mainWhite);
+      opacity:1;
+      box-shadow: 5px 2px 5px 2px rgba(0,0,0,0.5);
   }
   @media (max-width:500px) {
       .icon{
         font-size: 2rem;
         margin: .4rem;
       }
-      .card-body{
+      /* .card-body{
           flex-direction:column;
           text-align:center;
       }
@@ -113,6 +123,6 @@ const ProductWrapper = styled.div`
           margin-top:.75rem;
           width:50%;
 
-      }
+      } */
   }
 `

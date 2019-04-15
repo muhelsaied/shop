@@ -6,9 +6,9 @@ import InfoBcg from '../../images/aboutBcg.jpeg'
 import MorePage from './morePage'
 
 export default class Info extends Component {
-    state={
-        handleInfo:false,
-    }
+    // state={
+    //     handleInfo:false,
+    // }
 
     // toglr info div 
     handlestate = ()=> {
@@ -52,7 +52,7 @@ export default class Info extends Component {
 
                 </div>
             </div>
-            <MorePage handleInfo= {this.handleInfo}/>
+            <MorePage handleInfo= {this.props.handleInfo}/>
 
         </div>
       </section>

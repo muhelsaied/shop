@@ -28,13 +28,17 @@ const CartWrapper = styled.div`
     border-radius: 10px;
     max-width: 400px;
     width:100%;
-    opacity:${props=>props.show?"1":"0"};
+    opacity:${props=>props.show?".9":"0"};
+    height: ${props=>props.show?"100vh":"0"};
     /* width: ${props=>props.show?"100%":"0"}; */
     text-align:center;
     box-shadow: 1px 10px 26px 1px var(--primaryRGBA);
     transition: var(--easeTransition);
-    transform:${props=>props.show?"translateY(0)":"translateY(1300%)"};
-
+    transform:${props=>props.show?"translateY(0)":"translateY(-1500%)"};
+    /* display:${props=>props.show?"block":"none"}; */
+      p{
+        display:${props=>props.show?"block":"none"};
+      }
     @media (max-width: 680px){
       right: 0;
       border-radius:1px;

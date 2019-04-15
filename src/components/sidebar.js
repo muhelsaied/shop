@@ -36,6 +36,7 @@ const SideWrapper = styled.nav`
   position: fixed;
   top:69px;
   z-index:100;
+  opacity:.95;
   left:0;
   width:100%;
   height:100%;

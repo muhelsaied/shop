@@ -3,9 +3,9 @@ import Pargraph from './pargaph'
 import styled from 'styled-components'
 
 export default function MorePage({text}) {
-    // const {handleInfo}= this.handleInfo;
+    // const { handleInfo }= this.props.handleInfo;
   return (
-    <InfoWrapper className='row'  >
+    <InfoWrapper className='row' >
         <div className='col-sm-10 mx-auto col-md-6 col-lg-6 my-3' >
             <Pargraph 
             text='Lorem Ipsum is simply dummy text of the printing 
