@@ -61,7 +61,7 @@ const SideWrapper = styled.nav`
         color:var(--primaryColor);
         padding-left:2.5rem;
         background:var(--mainWhite);
-        filter:brightness(65%);
+        filter:brightness(90%);
       }
 
 @media (min-width: 680px){

@@ -13,7 +13,7 @@ export default function Home() {
     <div>
       <Main title='Hot Deals' max = 'true'>
         <Link 
-          to='/products'
+          to='/Deals'
           className='main-link'
           style={{margin:'2rem'}}>
           Find your Product
