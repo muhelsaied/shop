@@ -99,7 +99,7 @@ const ProductWrapper = styled.div`
       background-color:var(--primaryColor)!important;
       color:var(--mainWhite);
   }
-  @media (max-width:400px) {
+  @media (max-width:500px) {
       .icon{
         font-size: 2rem;
         margin: .4rem;
@@ -107,6 +107,12 @@ const ProductWrapper = styled.div`
       .card-body{
           flex-direction:column;
           text-align:center;
+      }
+      .text-main{
+          margin: 0 auto;
+          margin-top:.75rem;
+          width:50%;
+
       }
   }
 `

@@ -16,7 +16,7 @@ export default function Home() {
           to='/Deals'
           className='main-link'
           style={{margin:'2rem'}}>
-          Find your Product
+          Hot deals
           </Link>
       </Main>
       <Services/>
