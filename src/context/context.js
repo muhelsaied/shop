@@ -70,7 +70,7 @@ setProducts = (products) =>{
 } 
 // get cart from  local storage
 getStorageCart=() => {
-    return {};
+    return [];
 }
 
 
@@ -82,23 +82,30 @@ getStorageProduct = ()=> {
 
 // cart items
 
+// get total 
+getTotal = ()=> {}
+//add total
+addTotal = () => {}
+//sync storage
+syncStorage = () => {}
+
+
 //add to cart
 addToCart = id => {
     //set temp cart/productlist/item to deal with
-    console.log(this.state.cart)
-    let tempCart = [ ...this.state.cart];
+    let tempCart = [...this.state.cart];
     let tempProducts = [...this.state.storeProducts];
-    let tempItem = tempCart.find(product => product.id === id);
+    let tempItem = tempCart.find(item => item.id === id);
     if(!tempItem)
     {
         tempItem = tempProducts.find(product => product.id === id);
         let total = tempItem.price;
         let cartItem ={...tempItem, counter:1, total };
-        tempCart= [...tempItem, cartItem];
+        tempCart= [...tempCart, cartItem];
         
     }
     else{
-        tempItem.counter++;
+        tempItem.count++;
         tempItem.total = tempItem.price * tempItem.counter;
         tempItem.total = parseFloat(tempItem.total.toFixed(3)); 
     }
@@ -110,19 +117,12 @@ addToCart = id => {
         this.syncStorage();
         this.openCart();
     });
-    console.log(tempCart)
+
 }
 //set singlePage product 
 setSingleProduct  = id => {
     console.log(`singlePage product  ${id}`)
 }
-// get total 
-getTotal = ()=> {}
-//add total
-addTotal = () => {}
-//sync storage
-syncStorage = () => {}
-
 
 
 // side bar toggle 
