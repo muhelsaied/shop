@@ -7,7 +7,7 @@ import { ProductConsumer } from '../../context'
 
 export default function FeatureProduct() {
         return (
-            <section className = 'py-5' style={{background:'#dad4ec'}}>
+            <section className = 'py-5' style={{background:'var(--backColor)'}}>
                 <div className='container' >
                 {/* title */}
                     <Title title='featured Product' center='true' />

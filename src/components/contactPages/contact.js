@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <FormWrapper className = 'py-3'>
         <div className = 'row  m-0'>
-            <div className = 'col-10 mx-auto col-md-6 my-4'>
+            <div className = 'col-10 mx-auto my-4 col-md-8 col-lg-7'>
                 <Title 
                     title='Your suggestion  &amp;Comments'
                     center='true'/>
@@ -65,5 +65,5 @@ export default function Contact() {
 }
 
 const FormWrapper = styled.section`
-/* background:var(--mainGrey); */
+background:var(--backColor);
 `

@@ -19,6 +19,7 @@ class ProductProvider extends Component{
         cartTotal:0,
         storeProducts:[],
         FilteredProducts:[],
+        dealProducts:[],
         featuredProducts:[],
         singleProduct:{},
         loading:false 
@@ -52,6 +53,19 @@ setProducts = (products) =>{
         loading:false
 
     });
+
+    //deals products
+    let dealProducts = storeProducts.filter(item => item.deal === true);
+    this.setState({
+        storeProducts,
+        dealProducts:dealProducts,
+        featuredProducts,
+        cart:this.getStorageCart(),
+        singleProduct:this.getStorageProduct(),
+        loading:false
+
+    });
+
     // console.log(featuredProducts);
 } 
 // get cart from  local storage

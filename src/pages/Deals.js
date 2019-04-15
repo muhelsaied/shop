@@ -1,10 +1,15 @@
 import React from 'react'
+import Bcg from '../images/productsBcg.jpeg'
+import Main from '../components/main'
+import Deals from '../components/productPages/deals'
 
-export default function Deals() {
+
+export default function DealsPage() {
   return (
-    <div>
-      <h1>Deals page</h1>
-    </div>
+      <div>
+        <Main img ={Bcg}/>
+        <Deals/>
+      </div>
   )
 }
 

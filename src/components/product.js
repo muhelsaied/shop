@@ -12,7 +12,7 @@ export default function Product({product}){
                         value =>{
                             // console.log(value);
                             const { addToCart, setSingleProduct} = value;
-                            console.log(product)
+                            // console.log(product)
                             return (
                             <ProductWrapper className='col-10 mx-auto col-sm-8 col-md-6 col-lg-4 my-4'>
                                 <div className='card '>
