@@ -43,7 +43,7 @@ class App extends Component {
           <Route path='/' exact component = {Home}/>
           <Route path='/about/'  component = {About}/>
           <Route path='/products/'  component = {Products}/>
-          <Route path='/products/:id/'  component = {SingleProduct}/>
+          <Route path='/product/:id/'  component = {SingleProduct}/>
           <Route path='/cart/'  component = {Cart}/>
           <Route path='/contact/'  component = {Contact}/>
           <Route path='/deals/'  component = {Deals}/>

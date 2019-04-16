@@ -22,7 +22,7 @@ class ProductProvider extends Component{
         dealProducts:[],
         featuredProducts:[],
         singleProduct:{},
-        loading:false 
+        loading:true 
     }
 //
 componentDidMount(){
@@ -91,7 +91,8 @@ getStorageCart=() => {
 
 // get product from local storage
 getStorageProduct = ()=> {
-    return {};
+    let singleProduct = localStorage.getItem('singleProduct');
+    return singleProduct? JSON.parse(singleProduct) : {}
 }
 
 
@@ -175,7 +176,15 @@ addToCart = id => {
 }
 //set singlePage product 
 setSingleProduct  = id => {
-    console.log(`singlePage product  ${id}`)
+    // console.log(`singlePage product  ${id}`)
+    let product = this.state.storeProducts.find(item => item.id === id);
+    // set product to local storage
+    localStorage.setItem('singleProduct',JSON.stringify(product));
+    //return product in state 
+    this.setState({
+        singleProduct:{...product},
+        loading:false
+    })
 }
 
 
