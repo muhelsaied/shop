@@ -160,7 +160,7 @@ addToCart = id => {
         
     }
     else{
-        tempItem.count++;
+        tempItem.counter++;
         tempItem.total = tempItem.price * tempItem.counter;
         tempItem.total = parseFloat(tempItem.total.toFixed(3)); 
     }
@@ -195,6 +195,9 @@ handleSide = () =>{
     });
     }
 
+//////////////////////////////////////////////////
+    //cart functionialty 
+
 //toggle cart
 handleCart = () =>{
     this.setState({
@@ -211,8 +214,34 @@ closeCart = () =>{
 openCart = () =>{
     this.setState({
         cartOpen: true
+    },
+    ()=>this.syncStorage()
+    )
+}
+
+// incrementCart
+incrementCart = id => {
+    console.log('increment '+id);
+}
+// decrementCart
+decrementCart = id => {
+    console.log('Decrement '+id);
+}
+// RemoveCartItem
+removeCartItem = id => {
+    console.log('remove  '+id);
+}
+// clearCart
+clearCart = id => {
+    console.log('empty cart');
+    this.setState({
+        cart: [],
+        cartTotal:0
     })
 }
+
+
+
     render(){
         return(
         <ProductContext.Provider value=
@@ -223,7 +252,11 @@ openCart = () =>{
             openCart:this.openCart,
             closeCart:this.closeCart,
             addToCart:this.addToCart,
-            setSingleProduct:this.setSingleProduct
+            setSingleProduct:this.setSingleProduct,
+            incrementCart:this.incrementCart,
+            decrementCart:this.decrementCart,
+            removeCartItem:this.removeCartItem,
+            clearCart:this.clearCart
         }}>
         {this.props.children}
         </ProductContext.Provider>
