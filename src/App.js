@@ -9,7 +9,7 @@ import About from './pages/AboutPage';
 import Products from './pages/ProductsPage';
 import SingleProduct from './pages/SingleProuductPage';
 import Contact from './pages/ContactPage';
-import Cart from './pages/CartPage';
+import CartPage from './pages/CartPage';
 import Deals from './pages/Deals';
 import MyAccount from './pages/MyAccount';
 import Default from './pages/DefaultPage';
@@ -44,7 +44,7 @@ class App extends Component {
           <Route path='/about/'  component = {About}/>
           <Route path='/products/'  component = {Products}/>
           <Route path='/product/:id/'  component = {SingleProduct}/>
-          <Route path='/cart/'  component = {Cart}/>
+          <Route path='/cart/'  component = {CartPage}/>
           <Route path='/contact/'  component = {Contact}/>
           <Route path='/deals/'  component = {Deals}/>
           <Route path='/MyAccount/'  component = {MyAccount}/>

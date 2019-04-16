@@ -1,9 +1,14 @@
 import React from 'react'
+import Main from '../components/main'
+import Cart from '../components/cartPages'
 
-export default function Cart() {
+import Bcg from '../images/storeBcg.jpeg'
+
+export default function CartPage() {
   return (
     <div>
-      cartpage
+      <Main img={Bcg} title='cart page'/>
+      <Cart/>
     </div>
   )
 }

@@ -17,7 +17,8 @@ export default function SideBar() {
                   <li key = {link.id} >
                   <Link 
                     to = {link.path}
-                    className="side-link">
+                    className="side-link"
+                    onClick = {()=>handleSide()}>
                     {link.text}
                     </Link>
                 </li>
