@@ -221,15 +221,68 @@ openCart = () =>{
 
 // incrementCart
 incrementCart = id => {
-    console.log('increment '+id);
-}
+    // console.log('increment '+id);
+    // temp cart 
+    let tempCart = [...this.state.cart];
+    // find product
+    const tempItem = tempCart.find(item => item.id === id); 
+    // increase item count
+    tempItem.counter++;
+    //sum total 
+    tempItem.total = tempItem.counter * tempItem.price;
+    tempItem.total = parseFloat(tempItem.total.toFixed(2));
+    //set state
+    this.setState({
+        cart:[...tempCart]
+    },
+    () => {
+        this.addTotals();
+        this.syncStorage();
+      })
+    }
 // decrementCart
 decrementCart = id => {
-    console.log('Decrement '+id);
+    // console.log('Decrement '+id);
+    // temp cart 
+    let tempCart = [...this.state.cart];
+    // find product
+    const tempItem = tempCart.find(item => item.id === id); 
+    // increase item count
+    tempItem.counter--;
+    
+    // remove item from cart if it count< 0
+    if(tempItem.counter === 0 ){
+        this.removeCartItem(id)
+    }
+    else{
+        tempItem.total = tempItem.counter * tempItem.price;
+        tempItem.total = parseFloat(tempItem.total.toFixed(2));
+    //set state
+    this.setState({
+        cart:[...tempCart]
+    },
+    () => {
+        this.addTotals();
+        this.syncStorage();
+      })
+    }
 }
+
 // RemoveCartItem
 removeCartItem = id => {
-    console.log('remove  '+id);
+    // console.log('remove  '+id);
+    //temp cart 
+    let tempCart = [...this.state.cart];
+    //find product match id
+    tempCart = tempCart.filter(item => item.id !== id)
+    // set state
+    this.setState({
+        cart:[...tempCart]
+    },
+    () => {
+        this.addTotals();
+        this.syncStorage();
+      })
 }
 // clearCart
 clearCart = id => {
