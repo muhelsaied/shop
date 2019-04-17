@@ -9,6 +9,20 @@ export default function PopCart(){
                 {
                     value =>{
                         const { closeCart, cartOpen, cart, cartTotal, removeCartItem, clearCart } = value;
+                        if (cart.length === 0 ){
+                          return(
+                            <CartWrapper show = {cartOpen} onClick={closeCart}>
+                              <div className='col-12 text-main text-capitalize text-center mx-auto p-3 mt-5'>
+                                <h1 className='text-title py-3 m-3'> cart is epmty</h1>
+                                <Link 
+                                  to='/'
+                                  className='btn btn-warning mx-auto'>
+                                  keep shopping
+                                  </Link>
+                              </div>
+                            </CartWrapper>
+                          )
+                        }
                         return(
                             <CartWrapper show = {cartOpen} onClick={closeCart}>
                                       <ul className='list-group'>
@@ -35,7 +49,8 @@ export default function PopCart(){
                                               <div className='mt-2 col-12 text-center text capitalize text-title text-main'>
                                                 <Link className='btn btn-primary text-capitalize m-1'
                                                   to={`/product/${item.id}`}>view product</Link>
-                                                  <button className='btn btn-danger text-center text capitalize m-1'>remove product</button>
+                                                  <button className='btn btn-danger text-center text capitalize m-1'
+                                                  onClick={()=>removeCartItem(item.id)}>remove product</button>
                                               </div>
                                             </div>
                                             </li>

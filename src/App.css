@@ -59,3 +59,10 @@ color: var(--primaryColor);
 outline-color:var(--mainWhite);
 text-decoration: none;
 }
+
+
+/* cart page */
+.cart-icon{
+  cursor: pointer;
+  font-size: 22px !important;
+}

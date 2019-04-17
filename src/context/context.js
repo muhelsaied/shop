@@ -236,8 +236,12 @@ clearCart = id => {
     console.log('empty cart');
     this.setState({
         cart: [],
-        cartTotal:0
-    })
+        cartTotal:0,
+        cartItems:0,
+        cartSubTotal:0,
+        cartTax:0
+    },
+     ()=>this.syncStorage())
 }
 
 
