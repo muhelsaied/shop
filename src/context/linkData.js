@@ -29,16 +29,17 @@ export const linkData =
         id:6,
         text:'cart',
         path:'/cart'
-    },
-    {
-        id:7,
-        text:'track order',
-        path:'/track order'
-    },
-    {
-        id:8,
-        text:'my account',
-        path:'/myaccount'
     }
+    // ,
+    // {
+    //     id:7,
+    //     text:'track order',
+    //     path:'/track order'
+    // },
+    // {
+    //     id:8,
+    //     text:'my account',
+    //     path:'/myaccount'
+    // }
 ]
 

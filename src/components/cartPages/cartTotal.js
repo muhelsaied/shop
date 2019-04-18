@@ -16,15 +16,17 @@ export default function CartTotal() {
                 <TotalSub text={`sub total : $ ${cartSubTotal}`}/>
                 <TotalSub text={`tax : $ ${cartTax}`}/>
                 <TotalSub  text={`total : $ ${cartTotal}`}/>
-                  <button className='btn btn-outline-danger text-uppercase col-10 col-sm-4 col-lg-3 mx-auto p-2 m-3 sm-width-70'
+                <div className='col-10 max-auto my-2 text-title pb-2 d-block mx-auto text-center'>
+                  <button className='btn btn-outline-danger text-uppercase  p-2 m-3 '
                     onClick={()=>clearCart()}>
                     empty cart
                   </button>
-                  <Link className='btn btn-outline-warning text-uppercase col-10 col-sm-4 col-lg-3 mx-auto p-2 m-3 sm-width-70'
+                  <Link className='btn btn-outline-warning text-uppercase p-2 m-3 '
                   to ='/products'
                     onClick={()=>clearCart()}>
                     keep shopping
                   </Link>
+                  </div>
                 </div>
 
             )
