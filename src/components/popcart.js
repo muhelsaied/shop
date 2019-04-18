@@ -2,6 +2,7 @@ import React from 'react';
 import { ProductConsumer } from '../context';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
+import { FaShoppingCart } from 'react-icons/fa'
 
 export default function PopCart(){
         return (
@@ -13,6 +14,7 @@ export default function PopCart(){
                           return(
                             <CartWrapper show = {cartOpen} onClick={closeCart}>
                               <div className='col-12 text-main text-capitalize text-center mx-auto p-3 mt-5'>
+                                <FaShoppingCart style={{fontSize:'50px'}}/>
                                 <h1 className='text-title py-3 m-3'> cart is epmty</h1>
                                 <Link 
                                   to='/'
@@ -64,7 +66,7 @@ export default function PopCart(){
                                           <Link className='btn btn-warning text-capitalize m-1'
                                             to='/cart'>Go to cart</Link>
                                           <button className='btn btn-danger text-center text capitalize m-1'
-                                          onClick = {()=>clearCart()}>epmty cart</button>
+                                          onClick = {()=>clearCart()}>empty cart</button>
                                         </div>
                                       </ul>
                             </CartWrapper>

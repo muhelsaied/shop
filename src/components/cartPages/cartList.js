@@ -2,6 +2,7 @@ import React from 'react'
 import CartItem from './cartItem'
 import { Link } from 'react-router-dom'
 import { ProductConsumer } from '../../context/context';
+import { FaShoppingCart } from 'react-icons/fa'
        
 export default function CartList() {
   return (
@@ -13,6 +14,8 @@ export default function CartList() {
             if (cart.length === 0 ){
               return(
                   <div className='col-8 text-muted text-capitalize text-center mx-auto p-3'>
+                    <FaShoppingCart style={{fontSize:'75px'}}
+                    className='text-muted'/>
                     <h1 className='text-title py-3 m-3'> cart is epmty</h1>
                     <Link 
                       to='/products'

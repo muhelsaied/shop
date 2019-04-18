@@ -12,23 +12,41 @@ class ProductProvider extends Component{
         cartOpen:false,
         soicalLinks:SoicalData,
         links:linkData,
+
+        //cart items
+        
         cart:[],
         cartItems:0,
         cartSubTotal:0,
         cartTax:0,
         cartTotal:0,
+
+        //set product state
+
         storeProducts:[],
         FilteredProducts:[],
         dealProducts:[],
         featuredProducts:[],
         singleProduct:{},
-        loading:true 
+        loading:true, 
+        
+        //set search properity
+        
+        search:'',
+        price:0,
+        minPrice:0,
+        maxPrice:0,
+        company:'all',
+        shipping:false
     }
 //
 componentDidMount(){
     //from backend 
     this.setProducts(items);
 }
+
+
+
 //setproducts
 
 setProducts = (products) =>{
@@ -42,6 +60,12 @@ setProducts = (products) =>{
     })
     // console.log(storeProducts);
 
+
+            // max price of product
+    let maxPrice = Math.max(...storeProducts.map(item => item.price));
+    console.log(maxPrice)
+
+
     //featured products
     let featuredProducts = storeProducts.filter(item => item.featured === true);
     this.setState({
@@ -50,7 +74,9 @@ setProducts = (products) =>{
         featuredProducts,
         cart:this.getStorageCart(),
         singleProduct:this.getStorageProduct(),
-        loading:false
+        loading:false,
+        price:maxPrice,
+        maxPrice:maxPrice
 
     });
 
@@ -69,8 +95,6 @@ setProducts = (products) =>{
         //assign addTotal to set product function
         this.addTotals()
     });
-
-    // console.log(featuredProducts);
 } 
 // get cart from  local storage
 getStorageCart=() => {
@@ -298,6 +322,57 @@ clearCart = id => {
 }
 
 
+//////////////////////////////////////////////
+// search function
+
+handleSearchChange = (e) =>{
+    // console.log(e);
+    const name = e.target.name;
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    // console.log(name,value);
+    this.setState({
+        [name]:value,
+    },
+    this.sortedData
+    )}
+
+sortedData =() =>{
+// working variables
+const { storeProducts, price, company, shipping, search} = this.state
+//temp product array
+let tempProducts = [...storeProducts]
+// set filter logic 
+
+let tempPrice =parseInt(price);
+tempProducts = tempProducts.filter(item => item.price <= tempPrice);
+
+
+if(company !== 'all'){
+    tempProducts = tempProducts.filter(item => item.company === company);
+}
+
+if(search.length >0){
+    tempProducts = tempProducts.filter(item => {
+        let tempSearch = search.toLocaleLowerCase();
+        let tempTitle =item.title.toLocaleLowerCase().slice(0,search.length);
+        if(tempSearch === tempTitle ) {
+            return  item
+        }
+    });
+}
+if (shipping){
+    tempProducts = tempProducts.filter(item => item.freeShipping === true);
+}
+
+
+// else if{}
+
+//set state 
+this.setState({
+    FilteredProducts:tempProducts
+})
+}
+
 
     render(){
         return(
@@ -313,7 +388,8 @@ clearCart = id => {
             incrementCart:this.incrementCart,
             decrementCart:this.decrementCart,
             removeCartItem:this.removeCartItem,
-            clearCart:this.clearCart
+            clearCart:this.clearCart,
+            handleSearchChange:this.handleSearchChange
         }}>
         {this.props.children}
         </ProductContext.Provider>
