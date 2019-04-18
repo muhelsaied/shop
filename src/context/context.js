@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { linkData } from './linkData'
 import  { SoicalData } from '../context/soicalLink'
-import { items } from './productData'
+// import { items } from './productData'
+
+import { client } from './contentful'
 
 const ProductContext = React.createContext();
 
@@ -41,8 +43,19 @@ class ProductProvider extends Component{
     }
 //
 componentDidMount(){
-    //from backend 
-    this.setProducts(items);
+    //from backend contentful
+   // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
+
+
+  // this.setProducts(items);
+  client
+  .getEntries({
+    content_type: "storeTech"
+  })
+  .then(response => this.setProducts(response.items))
+  .catch(console.error);
+
+    // this.setProducts(items);
 }
 
 
@@ -363,9 +376,6 @@ if(search.length >0){
 if (shipping){
     tempProducts = tempProducts.filter(item => item.freeShipping === true);
 }
-
-
-// else if{}
 
 //set state 
 this.setState({
