@@ -30,10 +30,10 @@ export default function SingleProudct() {
                   <div className ='row my-5 p-3'>
                     <div className='col-10 mx-auto col-sm-10 col-md-8 col-lg-6'>
                       <div className='img-container'>
-                        <img 
-                          // src={image} 
-                          src = {`../${image}`}
-                          alt='title' 
+                        <img
+                          src={image} 
+                          // src = {`../${image}`}
+                          alt='title'
                           className='img-fluid'/>
                       </div>
                     </div>
@@ -46,15 +46,15 @@ export default function SingleProudct() {
                             price : {price}
                           </h5>
                         <p className='text-capitalize text-title mt-3'>
-                          short intro about product : 
+                          short intro about product :
                           {description}
                         </p>
                         <div className='col-12 m-2 text-center'>
-                          <Link 
+                          <Link
                             className='p-2 main-link '
                             to='/Products'
                             style={{margin:'.85rem'}}> back to products</Link>
-                          <button 
+                          <button
                             className='p-2 main-link'
                             style={{margin:'.85rem'}}
                             onClick={()=>addToCart(id)}

@@ -39,8 +39,8 @@ export default function PopCart(){
                                             </div>
                                               <div className ='col-3'>
                                                   <img 
-                                                  // src={item.image}
-                                                  src={`../${item.image}`}
+                                                  src={item.image}
+                                                  // src={`../${item.image}`}
                                                   width='30px' alt ='icon'/>
                                               </div>
                                               <div className ='col-9 cart-p'>
