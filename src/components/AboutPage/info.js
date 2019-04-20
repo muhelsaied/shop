@@ -6,9 +6,9 @@ import InfoBcg from '../../images/aboutBcg.jpeg'
 import MorePage from './morePage'
 
 export default class Info extends Component {
-    // state={
-    //     handleInfo:false,
-    // }
+    state={
+        handleInfo:false,
+    }
 
     // toglr info div 
     handlestate = ()=> {
@@ -44,15 +44,18 @@ export default class Info extends Component {
                         to = '/'
                         type='button'
                         style={{marginTop:'1.5rem'}}
-                        // onClick={showFull}
+                        onClick={this.handlestate}
                         >
                             More Info
                         </button>
                        
 
                 </div>
-            </div>
-            <MorePage handleInfo= {this.props.handleInfo}/>
+              </div>
+              {
+                  this.state.handleInfo && <MorePage show/>
+              }
+              
 
         </div>
       </section>

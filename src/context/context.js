@@ -53,7 +53,7 @@ componentDidMount(){
     content_type: "storeTech"
   })
   .then(response => this.setProducts(response.items))
-  .catch(console.error);
+  .catch(console.error);https://github.com/muhelsaied/shop.git
 
     // this.setProducts(items);
 }
@@ -76,7 +76,7 @@ setProducts = (products) =>{
 
             // max price of product
     let maxPrice = Math.max(...storeProducts.map(item => item.price));
-    console.log(maxPrice)
+    //console.log(maxPrice)
 
 
     //featured products
