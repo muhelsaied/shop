@@ -53,7 +53,7 @@ componentDidMount(){
     content_type: "storeTech"
   })
   .then(response => this.setProducts(response.items))
-  .catch(console.error);https://github.com/muhelsaied/shop.git
+        .catch(console.error);
 
     // this.setProducts(items);
 }
